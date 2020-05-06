@@ -64,6 +64,7 @@ namespace StudentenVerwaltung
             SqlDataAdapter sqlDa = new SqlDataAdapter(sqlcmd);
             sqlDa.Fill(sqlDt);
             return sqlDt;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
