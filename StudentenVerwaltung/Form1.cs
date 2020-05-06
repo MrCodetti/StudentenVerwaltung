@@ -118,6 +118,8 @@ namespace StudentenVerwaltung
             btnSave.Text = "Save";
             txbVorname.Clear();
             txbNachname.Clear();
+            txbMail.Clear();
+            txbGeburt.Clear();
             cmbGeschlecht.SelectedIndex = -1;
             cmbStudienzweig.SelectedIndex = -1;
             cmbMentor.SelectedIndex = -1;
