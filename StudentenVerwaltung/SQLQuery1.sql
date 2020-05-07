@@ -20,8 +20,8 @@ IF NOT EXISTS (SELECT * FROM tblStudenten WHERE MatrikelNr=@MatrikelNr)
 BEGIN
 INSERT INTO tblStudenten(Vorname, Nachname, Geschlecht, Geburtsdatum, Mail, ZweigID, MentorID)
 VALUES (@Vorname,@Nachname,@Geschlecht,@Geburtsdatum, @Mail, 
-(SELECT ZweigID FROM tblZweig WHERE Studienzweig='@Studienzweig'),
-(SELECT MentorID FROM tblMentor WHERE Mentor='@Mentor'))
+(SELECT ZweigID FROM tblZweig WHERE Studienzweig=@Studienzweig),
+(SELECT MentorID FROM tblMentor WHERE Mentor=@Mentor))
 END
 ELSE
 BEGIN
