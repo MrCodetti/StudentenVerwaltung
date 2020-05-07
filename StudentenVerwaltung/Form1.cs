@@ -183,8 +183,8 @@ namespace StudentenVerwaltung
                     txbVorname.Text = DT.Rows[0][1].ToString();
                     txbNachname.Text = DT.Rows[0][2].ToString();
                     cmbGeschlecht.Text = DT.Rows[0][3].ToString();
-                    txbMail.Text = DT.Rows[0][4].ToString();
-                    txbGeburt.Text = DT.Rows[0][5].ToString();
+                    txbMail.Text = DT.Rows[0][5].ToString();
+                    txbGeburt.Text = DT.Rows[0][4].ToString();
                     cmbStudienzweig.Text = DT.Rows[0][7].ToString();
                     cmbMentor.Text = DT.Rows[0][6].ToString();
                 }

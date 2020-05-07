@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grbStudenten = new System.Windows.Forms.GroupBox();
+            this.txbGeburt = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.cmbMentor = new System.Windows.Forms.ComboBox();
             this.cmbStudienzweig = new System.Windows.Forms.ComboBox();
             this.cmbGeschlecht = new System.Windows.Forms.ComboBox();
@@ -43,16 +47,12 @@
             this.lblNachname = new System.Windows.Forms.Label();
             this.lblVorname = new System.Windows.Forms.Label();
             this.dgvStudenten = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.txbGeburt = new System.Windows.Forms.TextBox();
             this.colMartikelID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVorname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNachname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGeschlecht = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGeburt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGeburt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStZweig = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMentor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbStudenten.SuspendLayout();
@@ -85,6 +85,43 @@
             this.grbStudenten.TabIndex = 0;
             this.grbStudenten.TabStop = false;
             this.grbStudenten.Text = "Studenten:";
+            // 
+            // txbGeburt
+            // 
+            this.txbGeburt.Location = new System.Drawing.Point(116, 171);
+            this.txbGeburt.Name = "txbGeburt";
+            this.txbGeburt.Size = new System.Drawing.Size(208, 22);
+            this.txbGeburt.TabIndex = 26;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(541, 197);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(117, 33);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(541, 128);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 33);
+            this.btnClear.TabIndex = 24;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(541, 57);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(117, 33);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cmbMentor
             // 
@@ -207,8 +244,8 @@
             this.colVorname,
             this.colNachname,
             this.colGeschlecht,
-            this.colGeburt,
             this.colMail,
+            this.colGeburt,
             this.colStZweig,
             this.colMentor});
             this.dgvStudenten.Location = new System.Drawing.Point(13, 313);
@@ -218,43 +255,6 @@
             this.dgvStudenten.Size = new System.Drawing.Size(775, 285);
             this.dgvStudenten.TabIndex = 1;
             this.dgvStudenten.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudenten_CellDoubleClick);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(541, 57);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 33);
-            this.btnSave.TabIndex = 23;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(541, 128);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(117, 33);
-            this.btnClear.TabIndex = 24;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(541, 197);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(117, 33);
-            this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // txbGeburt
-            // 
-            this.txbGeburt.Location = new System.Drawing.Point(116, 171);
-            this.txbGeburt.Name = "txbGeburt";
-            this.txbGeburt.Size = new System.Drawing.Size(208, 22);
-            this.txbGeburt.TabIndex = 26;
             // 
             // colMartikelID
             // 
@@ -284,19 +284,19 @@
             this.colGeschlecht.Name = "colGeschlecht";
             this.colGeschlecht.ReadOnly = true;
             // 
-            // colGeburt
-            // 
-            this.colGeburt.DataPropertyName = "Geburtsdatum";
-            this.colGeburt.HeaderText = "Geburtsdatum";
-            this.colGeburt.Name = "colGeburt";
-            this.colGeburt.ReadOnly = true;
-            // 
             // colMail
             // 
             this.colMail.DataPropertyName = "Mail";
             this.colMail.HeaderText = "Mail";
             this.colMail.Name = "colMail";
             this.colMail.ReadOnly = true;
+            // 
+            // colGeburt
+            // 
+            this.colGeburt.DataPropertyName = "Geburtsdatum";
+            this.colGeburt.HeaderText = "Geburtsdatum";
+            this.colGeburt.Name = "colGeburt";
+            this.colGeburt.ReadOnly = true;
             // 
             // colStZweig
             // 
@@ -355,8 +355,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVorname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNachname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGeschlecht;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGeburt;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGeburt;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStZweig;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMentor;
     }
